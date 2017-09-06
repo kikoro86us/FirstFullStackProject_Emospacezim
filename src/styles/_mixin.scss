@@ -1,0 +1,6 @@
+@mixin prefix($x,$y,$z,$scale:1){
+    -webkit-transform: translate($x,$y,$z) scale($scale); 
+    transform: translate($x,$y,$z) scale($scale);
+    -moz-transform: translate($x,$y,$z) scale($scale);
+    -ms-transform: translate($x,$y,$z) scale($scale);
+}

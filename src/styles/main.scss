@@ -1,0 +1,39 @@
+@import './_mixin.scss';
+// 
+
+
+@import './_App.scss';
+
+@import './_Navbar.scss';
+
+@import './_About.scss';
+
+@import './_WeddingFilms.scss';
+
+@import './_Gallery.scss';
+
+@import './_IntroVideos.scss';
+
+@import './_Events.scss';
+
+@import './_Services.scss';
+
+@import './_Footer.scss';
+
+@import './_Home.scss';
+
+@import './_GallerySlide.scss';
+
+
+//slick-carousel
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+
+//Google Font
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Acme|Candal|Lalezar|Signika');
+
+//Google Font Korean
+
+@import url("http://fonts.googleapis.com/earlyaccess/nanumgothic.css"); 

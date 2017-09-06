@@ -1,0 +1,51 @@
+
+.navContainer {
+    width: 100%;
+    max-width: 100%;
+    position: fixed;
+    z-index: 999;
+    background: rgba(14, 15, 15, 0.38);
+    box-shadow: 0 10px 20px rgba(50, 50, 50, 0.35);
+    text-decoration: none;
+    list-style: none;    
+}
+
+.menulist{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    // padding-left: 220px;
+    height: 60px;
+    text-decoration: none;
+    list-style: none;
+    font-family: Arial;
+    font-size: 20px;
+    color:#E0E0E0;
+}
+
+.login{
+    color: #E0E0E0;
+    background-color: transparent;
+    
+}
+
+
+
+.logout{
+    color: #E0E0E0;
+    background-color: transparent;
+}
+
+
+a a:hover, a:visited, a:link, a:active{
+    text-decoration: none;
+    color: inherit;
+} 
+
+#trlogo{
+    width:120px;
+    margin-left: 40px;
+    padding-right:250px ;
+
+}

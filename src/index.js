@@ -23,7 +23,7 @@ import $ from 'jquery'
         'transform' : 'translate(0px, -'+ wScroll /40 + '%)'
 	})
 
-
+// ddd
 	// var hahaha = $('.service').offset().top
 	// console.log(hahaha)
 	// if (wScroll >= hahaha) alert(hahaha)

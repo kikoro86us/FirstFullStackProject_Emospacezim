@@ -2,7 +2,7 @@
   "name": "personalproject_fullstack",
   "version": "0.1.0",
   "private": true,
-  "main":"server/server.js",
+  "main": "server/server.js",
   "dependencies": {
     "axios": "^0.16.2",
     "body-parser": "^1.17.2",
@@ -11,6 +11,7 @@
     "express": "^4.15.4",
     "express-session": "^1.15.5",
     "jquery": "^3.2.1",
+    "massive": "^4.0.0",
     "node-sass-chokidar": "0.0.3",
     "npm-run-all": "^4.1.1",
     "passport": "^0.4.0",

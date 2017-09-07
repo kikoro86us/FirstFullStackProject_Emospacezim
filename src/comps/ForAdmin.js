@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 
-class Events extends Component {
+
+class ForAdmin extends Component {
     render() {
         return (
-            <div className='event'>
-                <p>Events page</p>
+            <div>
                 
             </div>
         );
     }
 }
 
-export default Events;
+export default ForAdmin;

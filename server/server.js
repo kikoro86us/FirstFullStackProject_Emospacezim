@@ -6,10 +6,29 @@ const express = require('express'),
       passport = require('passport'),
       app = express(),
       Auth0Strategy = require('passport-auth0'),
+      massive = require('massive'),
       session = require('express-session');
 
 
+app.use(express.static(__dirname+'/../build'));
 app.use(bodyParser.json());
+
+
+//massive
+
+massive({
+  host: 'localhost',
+  port: 5432,
+  database: 'emospacezim',
+}).then(function(db){
+  app.set('db',db)
+});
+
+//-----------------------
+
+
+
+
 
 app.use(session({
     secret: 'password',
@@ -62,6 +81,24 @@ app.get('/auth/me', (req, res, next) => {
     req.logOut();
     return res.redirect(302, 'http://localhost:3000/#/');
   })
+
+
+
+//get all users
+app.get('/api/customers',function(req,res){
+  app.get('db').getAllCustomers().then((customer)=>{
+    res.status(200).send(customer)
+  })
+});
+
+//get all email
+app.get('/api/customeremails',function(req,res){
+  app.get('db').getAllEmail().then((customer)=>{
+    res.status(200).send(customer)
+  })
+})
+
+
 
 
 

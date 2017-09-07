@@ -12,7 +12,7 @@ class Navbar extends Component {
                     <ul className='menulist'>
                         <li>
                             <div>
-                            <a href='#mainpage'><img src={tlogo} className='tlogo' id='trlogo' alt="trlogo"/></a>
+                            <a href='/#mainpage'><img src={tlogo} className='tlogo' id='trlogo' alt="trlogo"/></a>
                             </div>
                         </li>
                         <a href='/#about'><li className='navlist'>About</li></a>

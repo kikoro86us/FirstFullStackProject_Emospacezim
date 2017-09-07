@@ -9,6 +9,7 @@ import Events from './Events'
 import Contact from './Contact'
 import Home from './Home'
 import LightboxGallery from './Lightbox'
+import GallFrame from './GallFrame'
 
 
 class Landing extends Component {
@@ -31,31 +32,35 @@ class Landing extends Component {
                 </div>
 
 
-                <div id='services'>
+                <div>
                     <Services />
                 </div>
 
 
-                <div id='weddingFilms'>
-                    {/* <WeddingFilms /> */}
-                </div>
+                {/* <div id='weddingFilms'>
+                    <WeddingFilms />
+                </div> */}
 
-                <div id='galleryslide'>
-                    {/* <LightboxGallery /> */}
-                </div>
+                {/* <div id='galleryslide'>
+                    <LightboxGallery />
+                </div> */}
 
 
-                <div id='gallery'>
+                <div>
                     <Gallery />
                 </div>
 
-
-                <div id='event'>
-                    <Events />
+                <div>
+                    <GallFrame />
                 </div>
 
 
-                <div id='contact'>
+                {/* <div>
+                    <Events />
+                </div> */}
+
+
+                <div>
                     <Contact />
                 </div>
 

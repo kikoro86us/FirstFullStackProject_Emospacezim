@@ -8,13 +8,19 @@ import traditional from '../img/gallery/traditional.jpg'
 import standing2 from '../img/gallery/standing2.jpg'
 import traditional2 from '../img/gallery/traditional2.jpg'
 import withdad from '../img/gallery/withdad.jpg'
+import gvid from '../vids/galbg.webm'
 
 class Gallery extends Component {
     render() {
         return (
-            <div className='gallery'>
-                <p id='galTitle'>Gallery</p>
+            <div className='gallery' id='gallerypic'>
+                <video id='galvid' autoPlay muted loop className="css-background-video" data-state="play">
+                     <source src={gvid} type="video/webm"/>
+                 </video>
+
+                
                 <div className='weddingPics'>
+                    <p id='galTitle'>Gallery</p>
                     <div className='imgRow'>
                         <figure className='columns'><img id='galimg' src={bg} /></figure>
                         <figure className='columns'><img id='galimg' src={getReady}/></figure>

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class WeddingFilms extends Component {
     render() {
         return (
-            <div>
+            <div id='weddingfilms'>
                 <p>This is Wedding Films</p>
             </div>
         );

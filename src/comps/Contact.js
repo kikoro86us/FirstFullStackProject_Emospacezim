@@ -4,13 +4,26 @@
 // 카카오톡 emospacezim
 // 이메일 emospace_zim@naver.com
 
+
+import contactbg from '../vids/ContactBG.webm'
 import React, { Component } from 'react';
 
 class Contact extends Component {
     render() {
         return (
-            <div>
-                <p>Contact page</p>
+            <div className='contactdiv' id='contact'>
+                <video id='contactvid' autoPlay muted loop className="css-background-video" data-state="play">
+                     <source src={contactbg} type="video/webm"/>
+                 </video>
+                 <div className='overlay'>
+                    <p>Contact</p>
+                    <div id='contactbody'>
+                    <p className='cinfo'>📞 010-9247-9289 / 070-8745-8199 (office)</p>
+                    <p className='cinfo'>KakaoTalk 💬 emospacezim</p>
+                    <p className='cinfo'>📧 emospace_zim@naver.com</p>
+                    </div>
+                </div>
+                 
             </div>
         );
     }

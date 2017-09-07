@@ -1,0 +1,39 @@
+#contactvid{
+    height: 80%;
+    width: 100%
+}
+
+
+.contactdiv{
+    position: relative;
+    
+}
+
+.contactdiv video{
+    position: relative;
+    z-index: 0;
+    margin-bottom: -5px;
+}
+
+.overlay{
+    position: absolute;
+    font-family: Rubik;
+    font-size: 60px;
+    color: #2E2E2E;
+    margin-left: 42%;
+    margin-top: 13%;
+    top:0;
+    left:0;
+    z-index: 1;
+}
+
+#contactbody{
+    font-size: 40px;
+    margin-top: 16%;
+    margin-left: -75%;
+    text-align: center;
+}
+
+.cinfo{
+    margin-top: 40px;
+}

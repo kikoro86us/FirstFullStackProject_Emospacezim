@@ -55,7 +55,7 @@ handleScroll = () =>{
 
     render() {
         return (
-            <div className='home'>
+            <div className='home' id='mainpage'>
 
                 <div className='header'>
                     <div className='bgbird'></div> 

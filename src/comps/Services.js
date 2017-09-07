@@ -14,7 +14,7 @@ handleClick(){
 
 
         return (
-            <div className='service'>
+            <div className='service' id='services'>
                 <p className='serviceTitle'>Services</p>
                 
                 <div className='part1'>

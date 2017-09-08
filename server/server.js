@@ -12,6 +12,7 @@ const express = require('express'),
 
 app.use(express.static(__dirname+'/../build'));
 app.use(bodyParser.json());
+app.use(cors());
 
 
 //massive
@@ -57,7 +58,7 @@ app.get('/auth', passport.authenticate('auth0'));
 
 app.get('/auth/callback', passport.authenticate('auth0', {
     successRedirect: 'http://localhost:3000/',
-    failureRedirect: 'http://localhost:3000/'
+    failureRedirect: '/auth'
   }))
 
 
@@ -71,7 +72,7 @@ passport.deserializeUser(function(obj, done){
 
 app.get('/auth/me', (req, res, next) => {
     if (!req.user) {
-      return res.status(404).send('User not found');
+      return res.status(403).send('User not found');
     } else {
       return res.status(200).send(req.user);
     }
@@ -82,7 +83,7 @@ app.get('/auth/me', (req, res, next) => {
     return res.redirect(302, 'http://localhost:3000/#/');
   })
 
-
+//---------endpoints--------------//
 
 //get all users
 app.get('/api/customers',function(req,res){
@@ -98,6 +99,16 @@ app.get('/api/customeremails',function(req,res){
   })
 })
 
+//check for admin
+app.get('/auth/admin', (req, res, next) => {
+  console.log('are you an admin?')
+  if (!req.user) {
+    console.log('nope')
+    res.redirect(302, 'http://localhost:3000/');
+  } else {console.log('yes')
+    res.status(200).send(req.user);
+  }
+})
 
 
 

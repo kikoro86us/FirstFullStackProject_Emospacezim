@@ -10,7 +10,9 @@ import Contact from './Contact'
 import Home from './Home'
 import LightboxGallery from './Lightbox'
 import GallFrame from './GallFrame'
+import ForAdmin from './ForAdmin'
 import $ from 'jquery'
+
 
 
 class Landing extends Component {
@@ -33,7 +35,7 @@ class Landing extends Component {
             })
             
             $('.couple').css({
-                'transform' : 'translate(0px, -'+ wScroll /40 + '%)'
+                'transform' : 'translate(0px, -'+ wScroll /75 + '%)'
             })
         
         // ddd
@@ -153,8 +155,12 @@ class Landing extends Component {
                 </div> */}
 
 
-                <div>
+                {/* <div>
                     <Contact />
+                </div> */}
+
+                <div>
+                    <ForAdmin />
                 </div>
 
 

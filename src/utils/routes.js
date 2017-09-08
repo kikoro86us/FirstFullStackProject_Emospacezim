@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom'
 import Landing from './../comps/Landing'
 import Events from './../comps/Events'
 import Contact from './../comps/Contact'
+import ForAdmin from './../comps/ForAdmin'
 
 export default(
     <Switch>
@@ -16,5 +17,10 @@ export default(
             {/* // events page */}
         <Route component = {Contact} path = '/contact' />
             {/* //contact page */}
+
+        <Route component = {ForAdmin} path = '/admin'/>
+            {/* foradmin page */}
+
+
     </Switch>
 )

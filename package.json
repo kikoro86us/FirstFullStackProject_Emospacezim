@@ -3,6 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "main": "server/server.js",
+  "homepage": "http://localhost:3000",
+  "proxy":{
+      "/api": { 
+        "target": "http://localhost:3050", 
+        "ws": true
+      },
+    "/auth": { 
+      "target": "http://localhost:3050",
+      "ws": true
+    }
+  },
   "dependencies": {
     "axios": "^0.16.2",
     "body-parser": "^1.17.2",

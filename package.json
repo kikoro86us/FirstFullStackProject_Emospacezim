@@ -4,25 +4,29 @@
   "private": true,
   "main": "server/server.js",
   "homepage": "http://localhost:3000",
-  "proxy":{
-      "/api": { 
-        "target": "http://localhost:3050", 
-        "ws": true
-      },
-    "/auth": { 
+  "proxy": {
+    "/api": {
+      "target": "http://localhost:3050",
+      "ws": true
+    },
+    "/auth": {
       "target": "http://localhost:3050",
       "ws": true
     }
   },
   "dependencies": {
     "axios": "^0.16.2",
-    "body-parser": "^1.17.2",
+    "body-parser": "^1.18.0",
     "cors": "^2.8.4",
     "dotenv": "^4.0.0",
     "express": "^4.15.4",
     "express-session": "^1.15.5",
+    "firebase": "^4.3.1",
     "jquery": "^3.2.1",
+    "js-base64": "^2.3.1",
     "massive": "^4.0.0",
+    "moment": "^2.18.1",
+    "moment-timezone": "^0.5.13",
     "node-sass-chokidar": "0.0.3",
     "npm-run-all": "^4.1.1",
     "passport": "^0.4.0",
@@ -30,6 +34,7 @@
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-images": "^0.5.5",
+    "react-moment": "^0.6.5",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.13",
     "react-slick": "^0.15.4",

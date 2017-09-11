@@ -39,8 +39,10 @@ class Navbar extends Component {
                     <li className='navlist'><a href='/#about'>About</a></li>
                     <li className='navlist'><a href='/#services'>Services</a></li>
                     <li className='navlist'><a href='/#weddingfilms'>Wedding Films</a></li>
-                    <li className='navlist'><a href='/#gallerypic'>Gallery</a></li>
-                    <li className='navlist'><a href='/#events'>Events</a></li>
+                    
+                    <li className='navlist' id='galleryp'>Gallery</li>
+
+                    {/* <li className='navlist'><a href='/#events'>Events</a></li> */}
 
                     <Link to='/contact'><li className='navlist'>Contact</li>
                     </Link>

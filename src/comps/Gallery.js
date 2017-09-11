@@ -13,7 +13,7 @@ import gvid from '../vids/galbg.webm'
 class Gallery extends Component {
     render() {
         return (
-            <div className='gallery' id='gallerypic'>
+            <div className='gallery' ref='gal' id='gallerypic'>
                 <video id='galvid' autoPlay muted loop className="css-background-video" data-state="play">
                      <source src={gvid} type="video/webm"/>
                  </video>

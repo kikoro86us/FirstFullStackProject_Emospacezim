@@ -20,6 +20,51 @@ class Landing extends Component {
     setTimeout(function() {
         
     console.log("Subscribbing scroll");
+
+ //scroll to link   
+    // $.fn.scrollView = function() {
+    //     return this.each(function() {
+    //         $('html', 'body').animate({
+    //             scrollTop: $(this).offset().top
+    //         }, 1000);
+    //     });
+    // }
+    // var gal = document.getElementById('gallerypic').getBoundingClientRect();
+    // console.log('top', gal.top)
+
+    // function scrollToTop(scrollDuration) {
+    //     var scrollStep = -window.scrollY / (scrollDuration / 15),
+    //         scrollInterval = setInterval(function(){
+    //         if ( window.scrollY != gal.top + window.scrollY ) {
+    //             window.scrollBy( 0, scrollStep );
+    //         }
+    //         else clearInterval(scrollInterval); 
+    //     },15);
+    // }
+  
+
+    // $(window).scrollTop('#gallerypic', 1000);
+    // window.scrollTo(0, 1000);
+    // console.log('scrollTop', document.getElementById('gallerypic').scrollY)
+   
+    // document.addEventListener('click', function() {
+    //     // window.scrollTo(0, gal.top + window.scrollY)
+    //     scrollToTop(1000)
+    // })
+
+    // scrollToTop(1000)
+    // $('li').on('click', function() {
+    //     $('#galvid').scrollView();
+    //     console.log('hahahahahahahahahahah')
+    //     window.scrollTo(0, gal.top + window.scrollY)
+    // })
+
+    // $('#gallerypic').on('click', function() {
+    //     alert('why?')
+    // })
+
+//-------------------------------------------------
+
     $(window).scroll(function(){
             var wScroll = $(this).scrollTop();
         
@@ -102,6 +147,7 @@ class Landing extends Component {
         
         })
     }, 1000);
+
     }
     componentWillUnmount(){
         console.log("Unsubscribe Scroll");

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import axios from 'axios'
 
 
@@ -16,10 +16,11 @@ class ForAdmin extends Component {
         this.getEmails = this.getEmails.bind(this)
     }
 
-    componentDidMount() {
+    componentWillMount() {
         //axios request for check admin endpoint
         axios.get('/auth/admin').then(res=>{
-            console.log('access granted')
+            console.log('access granted',res)
+            if ((typeof res.data !== 'object') || (res.data.emails[0]!=='kikoro86us@gmail.com')){console.log(this);this.props.history.push('/')}
         })
     }
 
@@ -142,4 +143,4 @@ class ForAdmin extends Component {
     }
 }
 
-export default ForAdmin;
+export default withRouter(ForAdmin);

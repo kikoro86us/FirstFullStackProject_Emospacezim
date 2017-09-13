@@ -8,7 +8,7 @@ const express = require('express'),
       Auth0Strategy = require('passport-auth0'),
       massive = require('massive'),
       session = require('express-session'),
-      stripe = require('./constants/stripe');
+      stripe = require('./server/constants/stripe');
 
       //-----stripe-----
       // const CORS_WHITELIST = require('./constants/frontend');
@@ -23,30 +23,24 @@ const express = require('express'),
       //-----stripe----
 
 
-app.use(express.static(__dirname+'/../build'));
 app.use(bodyParser.json());
 app.use(cors());
 };
-app.use(cors())
-app.use(bodyParser.json());
 //------stripe-------
 module.exports = configureServer;
 //------stripe-------
 
-
 //massive
 
 massive({
-  host: 'localhost',
-  port: 5432,
-  database: 'emospacezim',
+  connectionString:process.env.MASSIVE_URI
 }).then(function(db){
   app.set('db',db)
 });
 
 //-----------------------
 
-
+app.use(express.static('./build'))
 
 
 
@@ -76,7 +70,7 @@ passport.use(new Auth0Strategy({
 app.get('/auth', passport.authenticate('auth0'));
 
 app.get('/auth/callback', passport.authenticate('auth0', {
-    successRedirect: 'http://localhost:3000/',
+    successRedirect: '/',
     failureRedirect: '/auth'
   }))
 

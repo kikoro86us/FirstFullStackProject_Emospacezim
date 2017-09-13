@@ -2,7 +2,7 @@
   "name": "personalproject_fullstack",
   "version": "0.1.0",
   "private": true,
-  "main": "server/server.js",
+  "main": "server.js",
   "homepage": "http://localhost:3000",
   "proxy": {
     "/api": {

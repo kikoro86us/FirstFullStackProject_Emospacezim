@@ -54,7 +54,7 @@ class Widget extends Component {
 	}
 
 	submitComment(event){
-		if (event.keyCode != 13)
+		if (event.keyCode !== 13) //9월13일 오류나서 고쳤음 != 이거였음
 			return
 
 		const comment = {
@@ -78,7 +78,7 @@ class Widget extends Component {
 
 	render(){
 
-		if (this.state.showComments == true)
+		if (this.state.showComments === true) //9월13일 오류나서 고쳤음 == 이거였음
 			return (
 				<div style={style.comments}>
 					<div>

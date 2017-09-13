@@ -1,18 +1,17 @@
 import React, { Component } from 'react';
 import Navbar from './Navbar'
-import IntroVideo from './IntroVideo'
+// import IntroVideo from './IntroVideo'
 import About from './About'
 import Services from './Services'
 import WeddingFilms from './WeddingFilms'
 import Gallery from './Gallery'
-import Events from './Events'
 import Contact from './Contact'
 import Home from './Home'
-import LightboxGallery from './Lightbox'
+// import LightboxGallery from './Lightbox'
 import GallFrame from './GallFrame'
-import ForAdmin from './ForAdmin'
+// import ForAdmin from './ForAdmin'
 import $ from 'jquery'
-import jump from 'jump.js'
+// import jump from 'jump.js'
 
 
 

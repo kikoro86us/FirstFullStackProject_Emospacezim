@@ -8,7 +8,7 @@
     padding: 18px; 
     z-index: 1;
     display: table;
-    mix-blend-mode: difference;
+    // mix-blend-mode: difference;
     
   }
 .overlay {
@@ -49,7 +49,7 @@
     // position: absolute;
     font-family: Rubik;
     font-size: 60px;
-    color: #B1B1B1;
+    color: #313131;
     margin-left: 0;
     margin-top: 0;
     // top:0;
@@ -66,8 +66,14 @@
     // margin-top: 16%;
     // margin-left: -75%;
     // text-align: center;
+    mix-blend-mode: difference;
 }
 
 .cinfo{
     margin-top: 40px;
+}
+
+#mapmapmap{
+    margin-left:22%;
+    padding-top: 20px;
 }

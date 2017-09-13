@@ -1,0 +1,20 @@
+.locationstyle{
+    background-color: #F3525C;
+    color:white;
+    height:18px;
+    width: 100px;
+    font-size: 14px;
+    text-align: center;
+    /* background-attachment: fixed; */
+
+}
+
+#locaicon{
+    width: 100px;
+    height: 50px;
+    margin-top: 5px;
+    /* background-color: black; */
+    background-image: url('https://image.ibb.co/eOEwWv/map_marker_smilesize50.png');
+    background-repeat: no-repeat;
+    background-position:center center;
+}

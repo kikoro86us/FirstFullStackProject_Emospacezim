@@ -10,6 +10,7 @@ const express = require('express'),
       session = require('express-session'),
       stripe = require('./server/constants/stripe');
 
+      //test
       //-----stripe-----
       // const CORS_WHITELIST = require('./constants/frontend');
       // const corsOptions = {
@@ -164,7 +165,7 @@ app.post('/api/test',(req,res,next)=>{
 
 
 
-const port = 3050;
+const port = process.env.PORT;
 app.listen(port, () =>{
     console.log(`Listening on port😳 😳 😳 😳 : ${port}`);
 })

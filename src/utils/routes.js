@@ -13,9 +13,9 @@ export default(
 
 
 
-        <Route component = {Events} path = '/events' />
+        {/* <Route component = {Events} path = '/events' /> */}
             {/* // events page */}
-        <Route component = {Contact} path = '/contact' />
+        {/* <Route component = {Contact} path = '/contact' /> */}
             {/* //contact page */}
 
         <Route component = {ForAdmin} path = '/admin'/>

@@ -12,59 +12,17 @@ import LightboxGallery from './Lightbox'
 import GallFrame from './GallFrame'
 import ForAdmin from './ForAdmin'
 import $ from 'jquery'
+import jump from 'jump.js'
 
 
 
 class Landing extends Component {
+
+
     componentDidMount(){
+
     setTimeout(function() {
-        
     console.log("Subscribbing scroll");
-
- //scroll to link   
-    // $.fn.scrollView = function() {
-    //     return this.each(function() {
-    //         $('html', 'body').animate({
-    //             scrollTop: $(this).offset().top
-    //         }, 1000);
-    //     });
-    // }
-    // var gal = document.getElementById('gallerypic').getBoundingClientRect();
-    // console.log('top', gal.top)
-
-    // function scrollToTop(scrollDuration) {
-    //     var scrollStep = -window.scrollY / (scrollDuration / 15),
-    //         scrollInterval = setInterval(function(){
-    //         if ( window.scrollY != gal.top + window.scrollY ) {
-    //             window.scrollBy( 0, scrollStep );
-    //         }
-    //         else clearInterval(scrollInterval); 
-    //     },15);
-    // }
-  
-
-    // $(window).scrollTop('#gallerypic', 1000);
-    // window.scrollTo(0, 1000);
-    // console.log('scrollTop', document.getElementById('gallerypic').scrollY)
-   
-    // document.addEventListener('click', function() {
-    //     // window.scrollTo(0, gal.top + window.scrollY)
-    //     scrollToTop(1000)
-    // })
-
-    // scrollToTop(1000)
-    // $('li').on('click', function() {
-    //     $('#galvid').scrollView();
-    //     console.log('hahahahahahahahahahah')
-    //     window.scrollTo(0, gal.top + window.scrollY)
-    // })
-
-    // $('#gallerypic').on('click', function() {
-    //     alert('why?')
-    // })
-
-//-------------------------------------------------
-
     $(window).scroll(function(){
             var wScroll = $(this).scrollTop();
         
@@ -83,6 +41,10 @@ class Landing extends Component {
                 'transform' : 'translate(0px, -'+ wScroll /75 + '%)'
             })
         
+            })
+        }, 1000);
+
+    }
         // ddd
             // var hahaha = $('.service').offset().top
             // console.log(hahaha)
@@ -92,32 +54,33 @@ class Landing extends Component {
         //알란
         
         
-            var hahaha = $('.service').offset().top
-            var a = $('.a')
-            var b = $('.b') //for b
-            var c = $('.c')
-            var d = $('.d')
-            var e = $('.e')
-            var f = $('.f')
+            // var hahaha = $('.service').offset().top
+            // var a = $('.a')
+            // var b = $('.b') //for b
+            // var c = $('.c')
+            // var d = $('.d')
+            // var e = $('.e')
+            // var f = $('.f')
         
             // console.log(hahaha)//2217
-            if (wScroll >= (hahaha - 500))  {
-                a.addClass('scrolled')
-                b.addClass('scrolled')
-                c.addClass('scrolled')
-                d.addClass('scrolled')
-                e.addClass('scrolled')
-                f.addClass('scrolled')
-            }
-            else {
-                a.removeClass('scrolled')
-                b.removeClass('scrolled')
-                c.removeClass('scrolled')
-                d.removeClass('scrolled')
-                e.removeClass('scrolled')
-                f.removeClass('scrolled')
+
+            // if (wScroll >= (hahaha - 500))  {
+            //     a.addClass('scrolled')
+            //     b.addClass('scrolled')
+            //     c.addClass('scrolled')
+            //     d.addClass('scrolled')
+            //     e.addClass('scrolled')
+            //     f.addClass('scrolled')
+            // }
+            // else {
+            //     a.removeClass('scrolled')
+            //     b.removeClass('scrolled')
+            //     c.removeClass('scrolled')
+            //     d.removeClass('scrolled')
+            //     e.removeClass('scrolled')
+            //     f.removeClass('scrolled')
         
-            }
+            // }
         
         
         
@@ -126,33 +89,28 @@ class Landing extends Component {
         
         
             
-            if(wScroll > $('.weddingPics').offset().top - ($(window).height()/1.2)) {
+        //     if(wScroll > $('.weddingPics').offset().top - ($(window).height()/1.2)) {
         
-                $('.weddingPics figure').each(function(i){
+        //         $('.weddingPics figure').each(function(i){
         
-                    setTimeout(function() {
-                    $('.weddingPics figure').eq(i).addClass('is-showing');}, 150 * (i+1) );
+        //             setTimeout(function() {
+        //             $('.weddingPics figure').eq(i).addClass('is-showing');}, 150 * (i+1) );
         
+        // ----------------
+        //             // $('.weddingPics figure').addClass('is-showing');
         
-                    // $('.weddingPics figure').addClass('is-showing');
+        //         });
         
-                });
-        
-            }else{
-                $('.weddingPics figure').removeClass('is-showing')
-            }
-        
-        
+        //     }else{
+        //         $('.weddingPics figure').removeClass('is-showing')
+        //     }
         
         
-        })
-    }, 1000);
 
-    }
-    componentWillUnmount(){
-        console.log("Unsubscribe Scroll");
-        $(window).unbind('scroll')
-    }
+    // componentWillUnmount(){
+    //     console.log("Unsubscribe Scroll");
+    //     $(window).unbind('scroll')
+    // }
 
     render() {
         return (
@@ -178,11 +136,11 @@ class Landing extends Component {
                 </div>
 
 
-                {/* <div id='weddingFilms'>
+                <div id='weddingFilms'>
                     <WeddingFilms />
-                </div> */}
+                </div>
 
-                {/* <div id='galleryslide'>
+                {/* <div>
                     <LightboxGallery />
                 </div> */}
 
@@ -196,18 +154,13 @@ class Landing extends Component {
                 </div>
 
 
-                {/* <div>
-                    <Events />
-                </div> */}
-
-
-                {/* <div>
-                    <Contact />
-                </div> */}
-
                 <div>
-                    <ForAdmin />
+                    <Contact />
                 </div>
+
+                {/* <div>
+                    <ForAdmin />
+                </div> */}
 
 
             </div>

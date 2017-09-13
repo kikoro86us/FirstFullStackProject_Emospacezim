@@ -1,38 +1,60 @@
-import React from 'react';
-import Lightbox from 'react-images';
-import ringon from './../img/gallery/ringon.jpg'
-import Arrow from 'react-images';
-
-export default class LightboxGallery extends React.Component {
-    constructor(){
-        super();
-        this.state={
-            lightboxIsOpen: true
-      }
-
-      this.closeLightbox=this.closeLightbox.bind(this)
-
+import React, { Component } from 'react';
+import Lightbox from 'react-image-lightbox';
+import bg from '../img/gallery/bq.jpg'
+ 
+const images = [
+    'https://image.ibb.co/iyWMDa/bq.jpg',
+    'https://image.ibb.co/eregDa/getReady.jpg',
+    'https://image.ibb.co/f6GBDa/standing2.jpg',
+    'https://image.ibb.co/eY5Smv/traditional2.jpg',
+    'https://image.ibb.co/dEgYRv/standing.jpg',
+    'https://image.ibb.co/n4YPYa/traditional.jpg',
+    'https://image.ibb.co/n7sJta/tiara.jpg',
+    'https://image.ibb.co/e2JDRv/ringon.jpg'
+    // '//placekitten.com/1500/1500'
+];
+ 
+export default class LightboxExample extends Component {
+    constructor(props) {
+        super(props);
+ 
+        this.state = {
+            photoIndex: 0,
+            isOpen: false
+        };
     }
-
-closeLightbox(){
-    this.setState({lightboxIsOpen: false})
-}
-
-
-
-
-  render() {
-    return (
-      <Lightbox
-        images={[
-            {src: ringon }, 
-            {src: '../img/gallery/standing.jpg' }
-            ]}
-        isOpen={this.state.lightboxIsOpen}
-        onClickPrev={this.gotoPrevious}
-        onClickNext={this.gotoNext}
-        onClose={this.closeLightbox}
-      />
-    );
-  }
+ 
+    render() {
+        const {
+            photoIndex,
+            isOpen,
+        } = this.state;
+ 
+        return (
+            <div className='lightbox' id='lbphotos'>
+                <button id='lbbutton'
+                    type="button" 
+                    onClick={() => this.setState({ isOpen: true })}
+                >
+                    OPEN THE GALLERY
+                </button>
+ 
+                {isOpen &&
+                    <Lightbox
+                        mainSrc={images[photoIndex]}
+                        nextSrc={images[(photoIndex + 1) % images.length]}
+                        prevSrc={images[(photoIndex + images.length - 1) % images.length]}
+ 
+                        onCloseRequest={() => this.setState({ isOpen: false })}
+                        onMovePrevRequest={() => this.setState({
+                            photoIndex: (photoIndex + images.length - 1) % images.length,
+                        })}
+                        onMoveNextRequest={() => this.setState({
+                            photoIndex: (photoIndex + 1) % images.length,
+                        })}
+                    />
+                }
+            </div>
+        );
+    }
 }

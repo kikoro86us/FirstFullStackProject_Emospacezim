@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import tlogo from '../img/white-logo.png'
 import axios from 'axios'
+// import $ from 'jquery'
+import jump from 'jump.js'
 
 
 class Navbar extends Component {
@@ -12,7 +14,59 @@ class Navbar extends Component {
             user: null,
 
         }
+        this.jumpabout=this.jumpabout.bind(this)
+        this.jumpservices=this.jumpservices.bind(this)
+        this.jumpgal=this.jumpgal.bind(this)
+        this.jumpcont=this.jumpcont.bind(this)
+        this.jumpwf=this.jumpwf.bind(this)
+        this.jumpmain=this.jumpmain.bind(this)
     }
+
+
+jumpabout(){
+    // alert('work')
+    jump('.aboutContainer',{
+        duration: 1000,
+        // easing: easeInOutQuad
+    }) 
+}
+
+jumpservices(){
+    jump('.serviceTitle',{
+        duration: 1000,
+        // easing: easeInOutQuad
+    }) 
+}
+
+jumpgal(){
+    jump('.gallery',{
+        duration: 1000,
+        // easing: easeInOutQuad
+    }) 
+}
+
+jumpcont(){
+    jump('.contactdiv',{
+        duration: 1000,
+        // easing: easeInOutQuad
+    }) 
+}
+
+
+jumpwf(){
+    jump('.filmscontainer',{
+        duration: 1000,
+        // easing: easeInOutQuad
+    }) 
+}
+
+jumpmain(){
+    jump('.home',{
+        duration: 1000,
+        // easing: easeInOutQuad
+    }) 
+}
+
 
 
     componentDidMount() {
@@ -24,6 +78,7 @@ class Navbar extends Component {
             
             // console.log(this.state)
         });
+
     }
 
     render() {
@@ -33,19 +88,21 @@ class Navbar extends Component {
                 <ul className='menulist'>
                     <li>
                         <div>
-                            <a href='/#mainpage'><img src={tlogo} className='tlogo' id='trlogo' alt="trlogo" /></a>
+                            <a href='/#mainpage' onClick={this.jumpmain}><img src={tlogo} className='tlogo' id='trlogo' alt="trlogo" /></a>
                         </div>
                     </li>
-                    <li className='navlist'><a href='/#about'>About</a></li>
-                    <li className='navlist'><a href='/#services'>Services</a></li>
-                    <li className='navlist'><a href='/#weddingfilms'>Wedding Films</a></li>
+                    <li className='navlist' id='liabout'><a href='/#about'onClick={this.jumpabout}>About</a></li>
                     
-                    <li className='navlist' id='galleryp'>Gallery</li>
+                    <li className='navlist'><a href='/#services' onClick={this.jumpservices}>Services</a></li>
+                    
+                    <li className='navlist'><a href='/#weddingfilms' onClick={this.jumpwf}>Wedding Films</a></li>
+                    
+                    <li className='navlist'><a href='/#gallerypic' onClick={this.jumpgal}>Gallery</a></li>
 
                     {/* <li className='navlist'><a href='/#events'>Events</a></li> */}
 
-                    <Link to='/contact'><li className='navlist'>Contact</li>
-                    </Link>
+                    <li className='navlist'><a href='/#contact'onClick={this.jumpcont}>Contact</a></li>
+
 
                     {this.state.user === 'kikoro86us@gmail.com'
                         && <li><Link to="/admin">Admin</Link></li>}

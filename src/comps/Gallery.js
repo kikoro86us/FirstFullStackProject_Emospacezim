@@ -9,6 +9,7 @@ import standing2 from '../img/gallery/standing2.jpg'
 import traditional2 from '../img/gallery/traditional2.jpg'
 import withdad from '../img/gallery/withdad.jpg'
 import gvid from '../vids/galbg.webm'
+import OpeningBook from './OpeningBook'
 
 class Gallery extends Component {
     render() {
@@ -21,23 +22,7 @@ class Gallery extends Component {
                 
                 <div className='weddingPics'>
                     <p id='galTitle'>Gallery</p>
-                    <div className='imgRow'>
-                        <figure className='columns'><img id='galimg' src={bg} /></figure>
-                        <figure className='columns'><img id='galimg' src={getReady}/></figure>
-                        <figure className='columns'><img id='galimg' src={ringon}/></figure>
-                    </div>
-
-                    <div className='imgRow'>
-                        <figure className='columns'><img id='galimg' src={standing}/></figure>
-                        <figure className='columns'><img id='galimg' src={tiara}/></figure>
-                        <figure className='columns'><img id='galimg' src={traditional}/></figure>
-                    </div>
-
-                    <div className='imgRow'>
-                        <figure className='columns'><img id='galimg' src={standing2}/></figure>
-                        <figure className='columns'><img id='galimg' src={traditional2}/></figure>
-                        <figure className='columns'><img id='galimg' src={withdad}/></figure>
-                    </div>
+                    <OpeningBook />
                     
                  </div>
             </div>

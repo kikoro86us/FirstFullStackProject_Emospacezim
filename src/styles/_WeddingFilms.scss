@@ -1,0 +1,22 @@
+.filmscontainer{
+    position: relative;
+    width: 100%;
+    // height: 100vh;
+    // background-color: pink;
+    background-size: cover;
+    background-color: black;
+    background-attachment: fixed;
+    display:flex;
+    flex-wrap:wrap;
+}
+
+#weddingfilmstitle{
+    width: 100%;
+    font-size: 50px;
+    color: white;
+    font-family: Rubik;
+    text-align-last: center;
+    padding-top: 70px;
+    margin-bottom: 50px; 
+}
+

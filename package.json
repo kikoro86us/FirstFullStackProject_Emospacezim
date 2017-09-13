@@ -24,7 +24,7 @@
     "firebase": "^4.3.1",
     "google-map-react": "^0.24.0",
     "jquery": "^3.2.1",
-    "js-base64": "^2.3.1",
+    "js-base64": "^2.3.2",
     "jump.js": "^1.0.2",
     "massive": "^4.0.0",
     "moment": "^2.18.1",

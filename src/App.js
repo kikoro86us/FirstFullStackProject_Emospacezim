@@ -13,11 +13,6 @@ export default class App extends Component {
 				<Navbar />
 				{Router}
 				<Widget />
-				<Checkout
-					name={'A'}
-					description={'Option A'}
-					amount={1} />
-				
 			</div>
 		)
 	}

@@ -7,12 +7,31 @@ const express = require('express'),
       app = express(),
       Auth0Strategy = require('passport-auth0'),
       massive = require('massive'),
-      session = require('express-session');
+      session = require('express-session'),
+      stripe = require('./constants/stripe');
+
+      //-----stripe-----
+      // const CORS_WHITELIST = require('./constants/frontend');
+      // const corsOptions = {
+      //   origin: (origin, callback) =>
+      //     (CORS_WHITELIST.indexOf(origin) !== -1)
+      //       ? callback(null, true)
+      //       : callback(new Error('Not allowed by CORS'))
+      // };
+      const configureServer = app => {
+        // app.use(cors());      
+      //-----stripe----
 
 
 app.use(express.static(__dirname+'/../build'));
 app.use(bodyParser.json());
 app.use(cors());
+};
+app.use(cors())
+app.use(bodyParser.json());
+//------stripe-------
+module.exports = configureServer;
+//------stripe-------
 
 
 //massive
@@ -110,7 +129,44 @@ app.get('/auth/admin', (req, res, next) => {
   }
 })
 
+// =========================
+// === STRIPE PAYMENTS =====
+app.post('/api/test',(req,res,next)=>{
+  console.log('test',req.body)
+  const amountArray = req.body.amount.toString().split('');
+  const pennies = [];
+  for (var i = 0; i < amountArray.length; i++) {
+    if(amountArray[i] === ".") {
+      if (typeof amountArray[i + 1] === "string") {
+        pennies.push(amountArray[i + 1]);
+      } else {
+        pennies.push("0");
+      }
+      if (typeof amountArray[i + 2] === "string") {
+        pennies.push(amountArray[i + 2]);
+      } else {
+        pennies.push("0");
+      }
+        break;
+    } else {
+        pennies.push(amountArray[i])
+    }
+  }
+  const convertedAmt = parseInt(pennies.join(''));
 
+ const charge = stripe.charges.create({
+  amount: convertedAmt, // amount in cents, again
+  currency: 'usd',
+  source: req.body.source,
+  description: 'Test charge from react app'
+}, function(err, charge) {
+    if (err) return res.sendStatus(500)
+    return res.sendStatus(200);
+  // if (err && err.type === 'StripeCardError') {
+  //   // The card has been declined
+  // }
+});
+})
 
 
 

@@ -27,6 +27,7 @@ const express = require('express'),
 app.use(bodyParser.json());
 app.use(cors());
 };
+app.use(bodyParser.json());
 //------stripe-------
 module.exports = configureServer;
 //------stripe-------
@@ -151,7 +152,7 @@ app.post('/api/test',(req,res,next)=>{
   amount: convertedAmt, // amount in cents, again
   currency: 'usd',
   source: req.body.source,
-  description: 'Test charge from react app'
+  description: 'Charge from emospacezim'
 }, function(err, charge) {
     if (err) return res.sendStatus(500)
     return res.sendStatus(200);
@@ -162,7 +163,7 @@ app.post('/api/test',(req,res,next)=>{
 })
 
 
-//use this when you use browser router//
+//Use this when you use browser router//
 app.get('/*',(req,res) => {
   res.sendFile(path.join(__dirname, './build/index.html'))
   });

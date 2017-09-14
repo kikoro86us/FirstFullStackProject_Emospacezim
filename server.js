@@ -43,8 +43,6 @@ massive({
 
 app.use(express.static('./build'))
 
-
-
 app.use(session({
     secret: 'password',
     resave:false,
@@ -94,7 +92,7 @@ app.get('/auth/me', (req, res, next) => {
 
   app.get('/auth/logout', (req, res) => {
     req.logOut();
-    return res.redirect(302, 'http://localhost:3000/#/');
+    return res.redirect(302, '/');
   })
 
 //---------endpoints--------------//
@@ -118,7 +116,7 @@ app.get('/auth/admin', (req, res, next) => {
   console.log('are you an admin?')
   if (!req.user) {
     console.log('nope')
-    res.redirect(302, 'http://localhost:3000/');
+    res.redirect(302, '/');
   } else {console.log('yes')
     res.status(200).send(req.user);
   }

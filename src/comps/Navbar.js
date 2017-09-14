@@ -114,7 +114,7 @@ jumpmain(){
                     <li>
                         <div>
                             {!this.state.user &&
-                                <a href='http://localhost:3050/auth'>
+                                <a href='/auth'>
                                     <button className='login'>Log in / Sign in</button>
                                 </a>
                             }
@@ -123,7 +123,7 @@ jumpmain(){
                             {this.state.user &&
                                 <div className='maillogout'>
                                     <div id='loginmail'>{this.state.user}</div>
-                                    <a href='http://localhost:3050/auth/logout'>
+                                    <a href='/auth/logout'>
                                         <button className='logout'>Log out</button>
                                     </a>
                                 </div>

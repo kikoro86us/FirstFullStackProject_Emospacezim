@@ -162,6 +162,11 @@ app.post('/api/test',(req,res,next)=>{
 })
 
 
+//use this when you use browser router//
+app.get('/*',(req,res) => {
+  res.sendFile(path.join(__dirname, './build/index.html'))
+  });
+//---------------------------------------//
 
 const port = process.env.PORT;
 app.listen(port, () =>{

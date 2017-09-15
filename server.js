@@ -8,6 +8,7 @@ const express = require('express'),
       Auth0Strategy = require('passport-auth0'),
       massive = require('massive'),
       session = require('express-session'),
+      path = require('path'),
       stripe = require('./server/constants/stripe');
 
       //test
@@ -96,7 +97,7 @@ app.get('/auth/me', (req, res, next) => {
     return res.redirect(302, '/');
   })
 
-//---------endpoints--------------//
+//==============Endpoints====================//
 
 //get all users
 app.get('/api/customers',function(req,res){
@@ -112,7 +113,8 @@ app.get('/api/customeremails',function(req,res){
   })
 })
 
-//check for admin
+
+//=========Check for admin========================//
 app.get('/auth/admin', (req, res, next) => {
   console.log('are you an admin?')
   if (!req.user) {
@@ -123,8 +125,10 @@ app.get('/auth/admin', (req, res, next) => {
   }
 })
 
-// =========================
-// === STRIPE PAYMENTS =====
+
+
+// ================================================//
+// ================= STRIPE PAYMENTS ==============//
 app.post('/api/test',(req,res,next)=>{
   console.log('test',req.body)
   const amountArray = req.body.amount.toString().split('');
@@ -163,11 +167,14 @@ app.post('/api/test',(req,res,next)=>{
 })
 
 
-//Use this when you use browser router//
+//=========Use this when you use browser router=======//
 app.get('/*',(req,res) => {
+  console.log('testadmin');
   res.sendFile(path.join(__dirname, './build/index.html'))
   });
-//---------------------------------------//
+//====================================================//
+
+
 
 const port = process.env.PORT;
 app.listen(port, () =>{

@@ -20,7 +20,7 @@ class ForAdmin extends Component {
         //axios request for check admin endpoint
         axios.get('/auth/admin').then(res=>{
             console.log('access granted',res)
-            if ((typeof res.data !== 'object') || (res.data.emails[0].value!=='aceguy86@gmail.com')){this.props.history.push('/')}
+            if ((typeof res.data !== 'object') || (res.data.emails[0].value!=='kikoro86@us.com')){this.props.history.push('/')}
         })
     }
 

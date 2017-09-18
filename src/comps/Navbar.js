@@ -104,7 +104,7 @@ jumpmain(){
                     <li className='navlist'><a href='/#contact'onClick={this.jumpcont}>Contact</a></li>
 
 
-                    {this.state.user === 'kikoro86us@gmail.com'
+                    {this.state.user === 'aceguy86@gmail.com'
                         && <li><Link to="/admin">Admin</Link></li>}
 
 

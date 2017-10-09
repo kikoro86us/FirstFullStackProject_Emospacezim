@@ -63,7 +63,8 @@ passport.use(new Auth0Strategy({
   }, function(accessToken, refreshToken, extraParams, profile, done) {
 
     console.log(profile);
-    
+    //--------------------------//
+    //to store in my db madke db.get//
     done(null, profile);
 
 }));
